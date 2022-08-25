@@ -27,7 +27,7 @@ public class TutorialServiceImpl implements ITutorialService {
 	@Override
 	public List<Tutorial> getByPublished(boolean published) {
 		// TODO Auto-generated method stub
-		return tutorialRepository.findAll();
+		return tutorialRepository.findByPublished(published);
 	}
 	
 	@Override

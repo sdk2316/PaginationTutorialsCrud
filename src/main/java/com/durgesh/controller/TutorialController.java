@@ -38,7 +38,7 @@ public class TutorialController {
 				// tutorialRepository.findAll().forEach(tutorials::add);
 				tutorialService.getAll().forEach(tutorials::add);
 			else
-				tutorialService.getByTitleContaining(title).forEach(tutorials::add);
+				tutorialService.getDataByTitleContaining(title).forEach(tutorials::add);
 			if (tutorials.isEmpty()) {
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			}
