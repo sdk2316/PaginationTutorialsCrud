@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.durgesh.model.Tutorial;
 import com.durgesh.service.ITutorialService;
 
-@CrossOrigin(origins = "http://localhost:9090")
+@CrossOrigin(origins = "http://localhost:4200/")
 @RestController
 @RequestMapping("/api/tutorials")
 
@@ -46,6 +46,20 @@ public class TutorialController {
 		} catch (Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
+	}
+	
+	
+	@GetMapping("/getByTilte")
+	public ResponseEntity<List<Tutorial>> getAllTilte(@RequestParam(required = false) String title) {
+		
+			
+			
+				List<Tutorial> byTitleContaining = tutorialService.getDataByTitleContaining(title);
+			
+				return new ResponseEntity<>(byTitleContaining, HttpStatus.OK);
+			
+		
+		
 	}
 
 	

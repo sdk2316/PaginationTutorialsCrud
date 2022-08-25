@@ -9,6 +9,10 @@ public interface ITutorialService {
 	
 	 List<Tutorial> getByPublished(boolean published);
 	  List<Tutorial> getByTitleContaining(String title);
+	  
+	  List<Tutorial> getDataByTitleContaining(String title);
+	  
+	  
 	 List<Tutorial> getAll();
 	Tutorial saveTutorial(Tutorial tutorial);
 	Optional<Tutorial> getById(long id);

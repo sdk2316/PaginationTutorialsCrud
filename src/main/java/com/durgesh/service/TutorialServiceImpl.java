@@ -20,7 +20,7 @@ public class TutorialServiceImpl implements ITutorialService {
 
 	@Override
 	public List<Tutorial> getByTitleContaining(String title) {
-		// TODO Auto-generated method stub
+		
 		return tutorialRepository.findAll();
 	}
 
@@ -74,6 +74,12 @@ public class TutorialServiceImpl implements ITutorialService {
 	public void deleteAllTutorials() {
 		tutorialRepository.deleteAll();
 		
+	}
+
+	@Override
+	public List<Tutorial> getDataByTitleContaining(String title) {
+		// TODO Auto-generated method stub
+		return tutorialRepository.findByTitleContaining(title);
 	}
 	
 	
