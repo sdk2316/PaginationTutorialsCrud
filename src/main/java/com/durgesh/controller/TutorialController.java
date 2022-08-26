@@ -30,6 +30,8 @@ public class TutorialController {
 	@Autowired
 	ITutorialService tutorialService;
 
+	
+	//front end done
 	@GetMapping("/getTutorialsWithTilte")
 	public ResponseEntity<List<Tutorial>> getAllTutorials(@RequestParam(required = false) String title) {
 		try {
@@ -48,7 +50,7 @@ public class TutorialController {
 		}
 	}
 	
-	
+	//front end done
 	@GetMapping("/getByTilte")
 	public ResponseEntity<List<Tutorial>> getAllTilte(@RequestParam(required = false) String title) {
 		
