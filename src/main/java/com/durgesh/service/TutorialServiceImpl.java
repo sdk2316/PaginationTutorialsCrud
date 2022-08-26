@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.durgesh.exception.ResourceNotFoundException;
@@ -80,6 +82,24 @@ public class TutorialServiceImpl implements ITutorialService {
 	public List<Tutorial> getDataByTitleContaining(String title) {
 		// TODO Auto-generated method stub
 		return tutorialRepository.findByTitleContaining(title);
+	}
+
+	@Override
+	public Page<Tutorial> getAllPage(Pageable paging) {
+		// TODO Auto-generated method stub
+		return tutorialRepository.findAll(paging);
+	}
+
+	@Override
+	public Page<Tutorial> getByTitleContaining(String title, Pageable paging) {
+		// TODO Auto-generated method stub
+		return tutorialRepository.findByTitleContaining(title, paging);
+	}
+
+	@Override
+	public Page<Tutorial> getByPublished(boolean b, Pageable paging) {
+		// TODO Auto-generated method stub
+		return tutorialRepository.findByPublished(b,paging);
 	}
 	
 	
